@@ -1,18 +1,23 @@
 <template>
-  <component :is="layout"/>
+  <div v-if="false">
+    <component :is="layout" />
+  </div>
 </template>
 
 <script>
-import Vue from 'vue'
-import { setGlobalInfo } from '@app/util'
+// import Vue from 'vue'
+// import { setGlobalInfo } from '@app/util'
 
 export default {
   methods: {
     getLayout () {
       if (this.$page.path) {
         const layout = this.$page.frontmatter.layout
-        if (layout && (this.$vuepress.getLayoutAsyncComponent(layout)
-          || this.$vuepress.getVueComponent(layout))) {
+        if (
+          layout
+          && (this.$vuepress.getLayoutAsyncComponent(layout)
+            || this.$vuepress.getVueComponent(layout))
+        ) {
           return layout
         }
         return 'Layout'
@@ -23,9 +28,10 @@ export default {
 
   computed: {
     layout () {
-      const layout = this.getLayout()
-      setGlobalInfo('layout', layout)
-      return Vue.component(layout)
+      return false
+      // const layout = this.getLayout()
+      // setGlobalInfo('layout', layout)
+      // return Vue.component(layout)
     }
   }
 }
