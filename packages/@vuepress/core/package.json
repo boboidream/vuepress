@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/vuejs/vuepress#readme",
   "dependencies": {
+    "core-js": "^3.2.1",
     "@babel/core": "^7.0.0",
     "@vue/babel-preset-app": "^3.1.1",
     "@vuepress/markdown": "^1.0.3",

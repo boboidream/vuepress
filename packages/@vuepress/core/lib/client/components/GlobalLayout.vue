@@ -5,8 +5,8 @@
 </template>
 
 <script>
-// import Vue from 'vue'
-// import { setGlobalInfo } from '@app/util'
+import Vue from 'vue'
+import { setGlobalInfo } from '@app/util'
 
 export default {
   methods: {
@@ -28,10 +28,9 @@ export default {
 
   computed: {
     layout () {
-      return false
-      // const layout = this.getLayout()
-      // setGlobalInfo('layout', layout)
-      // return Vue.component(layout)
+      const layout = this.getLayout()
+      setGlobalInfo('layout', layout)
+      return Vue.component(layout)
     }
   }
 }
